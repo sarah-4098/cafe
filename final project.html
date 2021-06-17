@@ -1,0 +1,315 @@
+<html>
+    <head>
+<title>
+    Cafe
+</title>
+<link href="sign-up style.css" rel="stylesheet">
+<link rel="stylesheet" href="fullpagetabs.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style>
+     #loader{
+        width: 120px;
+        height: 120px;
+        border: rgb(255, 255, 255) 15px solid;
+        border-left: blue 15px solid;
+         border-radius: 50% ; 
+        animation-name: loader;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        margin: auto;
+        margin-top:18%;
+    }
+    #loading{
+        color: white;
+        animation-name: effect;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        
+    }
+    #content{
+        background-image: url(cafe1.webp);
+    }
+    #d{
+        font-size: 50px;
+        padding: 0px 20px;
+line-height: 60px;
+    }
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+   .navbar ul{
+list-style: none;
+    }
+    .navbar ul a li{
+
+padding: 0px 20px;
+line-height: 60px;
+transition: all 1s;
+    }
+    .navbar{
+        height: 920px;
+        width:200px;
+        background-color: rgb(107, 224, 175);
+
+        position: fixed;
+        left: -200px;
+        transition: all 0.4s;
+        top: 0px;
+    }
+    .navbar ul a{
+        font-size: 18px;
+        color: blanchedalmond;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .navbar ul a li:hover{
+        background-color: crimson;
+        font-size: 19px;
+    }
+    .navbar  h1,img{
+        float: left;
+        margin-left:0px ;
+    }
+    .navbar h1,img:hover{
+       margin-left:5px ;
+        transition: 0.5s;
+    }
+    .navbar h1{
+        line-height: 60px;
+        margin-left:15px ;
+    }
+    .navbar h1:hover{
+        background-color: rgb(8, 122, 189);
+        transition: 0.5s;
+        margin-left:20px ;
+    }
+    #open{
+        border: black 3px solid;
+        font-size: 17px;
+        padding: 3px;
+        background-color: transparent;
+    }
+    #close{
+        border: black 3px solid;
+        font-size: 17px;
+        padding: 3px;
+        background-color: transparent;
+        margin-left: 140px;
+    }
+    .content{
+                height: 100%;
+                background-color: lightgray;
+                padding: 30px;
+                margin: 5px;
+                display: none;
+
+                animation-name: effect;
+                animation-duration: 0.4s;
+            }
+            @keyframes effect{
+                from{opacity : 0 ; top : 60px ; }
+                to { opacity : 1 ; top : 0px ; }
+            }
+            @keyframes effect{
+        0%{
+            font-size: 25px;
+            text-shadow: 10px 10px 5px blue;
+        }
+        50%{
+            font-size: 35px;
+            text-shadow:20px 20px 2px crimson;
+        }
+        100%{
+            font-size: 25px;
+            text-shadow: 10px 10px 5px blue;
+        }
+
+    }
+    @keyframes loader{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .ot2{
+                color: white;
+                font-size: x-large;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            #d6{
+                border: black 1px solid;
+                border-width: 300px;
+            display: block;
+                background-color: black;
+            }
+            .p{
+                color: white;
+                font-size: medium;
+                font-family: cursive;
+            }
+            .ot1{
+                color: white;
+                font-size: x-large;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            #d4{
+                border: black 1px solid;
+                border-width: 300px;
+            display: block;
+                background-color: black;
+            }
+</style>
+    </head>
+    <body>
+        <div id="loader"><p id="loading">Loading...</p></div>
+        <div id="content">
+<button onclick="shw()" id="open">Open</button>
+<div class="navbar" id="navbar">
+   <button onclick="hide()" id="close">Close</button>
+   
+   <img src="imglogo.jpg" width="60px" height="60px"> 
+   <h1> <b>Cafe4all</b> </h1>
+    <ul> 
+       
+            
+       <a onclick="show('AboutUs')">    <li><i class="fa fa-user"></i>About Us</li>    </a>
+       <a onclick="show('Products')">    <li><i class="fa fa-product-hunt"></i>Menu</li>    </a>
+       <a onclick="show('Login')"><li><i class="fa fa-sign-in"></i>Login/Sign Up</li></a>
+       <a onclick="show('ContactUs')">    <li><i class="fa fa-envelope-o"></i> Contact Us</li>  </a>
+    </ul>
+</div>
+<div id="Login" class="conten">
+    <div class="div">
+        <fieldset>
+       <legend> <h1>Login to the Cafe</h1></legend>
+       </fieldset>
+        <form action="" onsubmit="return validate()">
+<input type="text" placeholder="First Name" name="fname"required class="c2">
+<input type="text" placeholder="Last Name" name="lname "required class="c2"><br> <br>
+<select name="gender" class="cl">
+  <option value=""disabled selected> Select your Gender</option>
+  <option value="M"> Male</option>
+  <option value="F"> Female</option>
+  <option value="NB">Non-Binary</option>
+  <option value="NA">Prefer not to say</option>
+  <option value="O"> Other</option>
+   </select><BR><BR>
+      <input type="number" placeholder="Contact Number" name="contact"class="cl"><br><br>
+<input type="email" placeholder="Email"  name="email" required id="ci"> <br><br>
+<input type="password"  placeholder="Password" name="pass" required id="pass"> <label id="label1"></label><br><br>
+<input type="password"  placeholder=" Comfirm Password" name="pass" required id="cpass"><label id="labell"></label><br><br>
+<label><input type="checkbox" id="cb" name="accept" >I agree to being sent notifications</label><br><br>
+<button type="submit" class="cl">Login/Sign Up</button>
+        </form>
+    </div>
+    <script>
+        function validate(){
+  var p1 = document.getElementById("pass").value ;
+  var p2 = document.getElementById("cpass").value ;
+  var x = document.getElementById("cb") ;
+  if(p1 != p2 )
+{
+  
+  document.getElementById("cpass").style.border = "solid red 3px"
+  document.getElementById("labell").innerHTML = "Password not matched"
+  return false ;
+}
+if(p1.length == 0){
+  document.getElementById("pass").style.border = "red 3px solid" ;
+  document.getElementById("label1").innerHTML = "Passwords cannot be empty" ;
+  return false ;
+}
+if( x.checked == false ){
+  alert("Please accept the T&Cs") ;
+  return false ;
+}
+}
+    </script>
+</div>
+<div id="AboutUs" class="content">
+    <p class="p">
+        This family-run business was established in 1976 and is located in one of the hidden corners of Central London. This vintage style cafe serves coffees and breakfasts to suit whatever your taste. Fresh hand-made coffee beans are used to make your coffee so that it is the best quality possible. We hope you enjoy your stay here!
+        </p>
+        <div id="d4" >
+            <h1 class="ot1">
+                Opening Times
+            </h1><br><br>
+            <ul class="p">
+                <li>Monday 7:30-22:00</li><br>
+                <li>Tuesday 7:30-22:00</li><br>
+                <li>Wednesday 8:00-20:00</li><br>
+                <li>Thurday 7:30-22:00</li><br>
+                <li>Friday 8:00-22:00</li><br>
+                <li>Saturday 9:00-20:00</li><br>
+                <li>Sunday 10:00-17:00</li><br>
+               
+            </ul>
+        </div>
+        </div>
+      
+</div>
+<div id="ContactUs" class="content">
+    <p>You can contact us during these times on 078########</p>
+</div>
+<div id="Products" class="content">
+    <div id="d6">
+        <h1 class="ot2">Menu</h1>  <br><br>
+          <h2>Coffee</h2> <br>
+          <ul class="p">
+              <li>Latte</li><br>
+              <li>Cappucino</li><br>
+              <li>Flat White</li><br>
+              <li>Flat Black</li><br>
+              <li>Americano</li><br>
+              <li>Mocha</li><br>
+              <li>Cortado</li><br>
+              <li>Caramel Cortado</li><br>
+              <li>Mocha Cortado</li><br>
+              <li>Espresso</li><br>
+              </ul>
+              <h2>Breakfasts and Pastries</h2><br>
+              <ul class="p">
+                  <li>British Smoked Bacon Bap</li><br>
+                  <li>British Pork Sausage Bap</li><br>
+                  <li>Breakfast Wrap</li><br>
+                  <li>White Toast</li><br>
+                  <li>Brown Seeded Toast</li><br>
+                  <li>Fruited Teacake</li><br>
+                  <li>All Butter Croissant</li><br>
+                  <li> Almond Croissant</li><br>
+                  <li>Chocolate Twist</li><br>
+                  <li>Cinnamon Swirl</li><br>
+                  <li>Pain au Chocolat</li><br>
+                  
+              </ul>
+       </div>
+</div>
+
+ </div>
+<script>
+    function shw (){
+        document.getElementById("navbar").style.left = "0px"
+    }
+    function hide(){
+        document.getElementById("navbar").style.left = "-200px"
+    }
+    function loading(){
+                 document.getElementById("loading").style.display = "none" ;
+                 document.getElementById("loader").style.display = "none" ;
+                 document.getElementById("content").style.display = "block" ;
+             }
+             setTimeout(loading , 3000) ;
+
+             function show( x ){
+    var content = document.getElementsByClassName("content") ;
+    for(var i = 0 ; i < content.length ; i++){
+    content[i].style.display = "none " ;
+    }
+       document.getElementById( x ).style.display = "block" ;
+}
+</script>
+    </body>
+</html>
